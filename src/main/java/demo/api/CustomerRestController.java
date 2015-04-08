@@ -48,4 +48,11 @@ public class CustomerRestController {
 		customer.setId(id);
 		return customerService.update(customer);
 	}
+
+	// 削除
+	@RequestMapping(value = "{id}", method = RequestMethod.DELETE)
+	@ResponseStatus(HttpStatus.NO_CONTENT)
+	void deleteCustomer(@PathVariable Integer id) {
+		customerService.delete(id);
+	}
 }
